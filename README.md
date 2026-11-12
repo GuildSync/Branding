@@ -78,16 +78,15 @@ branding/
 
 ## 5. Color Palette
 
+GuildSync follows a **strictly monochrome** visual identity. Only **Pure Black** and **Pure White** are permitted for official brand assets, marks, and logotypes.
+
 | Color | Token | HEX | RGB | Purpose |
 | :---: | :--- | :--- | :--- | :--- |
-| <img src="./.github/swatches/pure-black.svg" width="24" height="24" alt="Pure Black (#000000)" /> | **Pure Black** | `#000000` | `0, 0, 0` | Primary dark theme background, high contrast |
-| <img src="./.github/swatches/pure-white.svg" width="24" height="24" alt="Pure White (#FFFFFF)" /> | **Pure White** | `#FFFFFF` | `255, 255, 255` | Primary mark, text, and vector iconography |
-| <img src="./.github/swatches/discord-indigo.svg" width="24" height="24" alt="Discord Indigo (#5865F2)" /> | **Discord Indigo** | `#5865F2` | `88, 101, 242` | Ecosystem accent, Discord UI integration |
-| <img src="./.github/swatches/electric-indigo.svg" width="24" height="24" alt="Electric Indigo (#6366F1)" /> | **Electric Indigo** | `#6366F1` | `99, 102, 241` | Modern UI highlights, glow effects, interactive states |
-| <img src="./.github/swatches/sync-blue.svg" width="24" height="24" alt="Sync Blue (#3B82F6)" /> | **Sync Blue** | `#3B82F6` | `59, 130, 246` | Data sync indicator, API communication |
+| <img src="./.github/swatches/pure-black.svg" width="20" height="25" alt="Pure Black (#000000)" /> | **Pure Black** | `#000000` | `0, 0, 0` | Primary dark theme background, high contrast |
+| <img src="./.github/swatches/pure-white.svg" width="20" height="25" alt="Pure White (#FFFFFF)" /> | **Pure White** | `#FFFFFF` | `255, 255, 255` | Primary mark, text, and vector iconography |
 
 > **Note on SVG fill:**
-> All master vector files use `fill="currentColor"`. When embedding in React/Next.js/Tailwind, change color via CSS (e.g., `text-white`, `text-indigo-400`, `text-emerald-400`).
+> All master vector files use `fill="currentColor"`. When embedding in React/Next.js/Tailwind, keep the color strictly monochrome via CSS (e.g., `text-white` on dark backgrounds or `text-black` on light backgrounds).
 
 ---
 
@@ -133,10 +132,10 @@ export function GuildSyncIcon({ className = "w-8 h-8" }: { className?: string })
 }
 ```
 
-### Inline SVG (Dynamic Theming)
+### Inline SVG (Monochrome Theming)
 
 ```html
-<svg class="text-white hover:text-indigo-400 transition-colors" viewBox="0 0 328 328" width="48" height="48" fill="currentColor">
+<svg class="text-black dark:text-white" viewBox="0 0 328 328" width="48" height="48" fill="currentColor">
   <!-- Use vector/guildsync-icon.svg contents -->
 </svg>
 ```
@@ -147,6 +146,7 @@ export function GuildSyncIcon({ className = "w-8 h-8" }: { className?: string })
 
 To preserve brand integrity:
 
+- **Do not** recolor the mark or logotype outside the monochrome palette — only **Pure Black** (`#000000`) and **Pure White** (`#FFFFFF`) are permitted (no accent colors, hues, or gradients).
 - **Do not** stretch, skew, or distort the proportions of the mark or logotype.
 - **Do not** round the sharp 45° beveled edges or corners of the arrows.
 - **Do not** rearrange or alter the relative scale between the text and arrow connector.
